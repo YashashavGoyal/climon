@@ -13,6 +13,9 @@ import {
   LineChart,
   Zap as ZapIcon
 } from "lucide-react"
+import { TerminalSimulation } from "@/components/TerminalSimulation"
+import { BentoFeatures } from "@/components/BentoFeatures"
+import { InstallTabs } from "@/components/InstallTabs"
 
 export default function Home() {
   const container = {
@@ -46,10 +49,11 @@ export default function Home() {
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6">
               The Developer Utility Belt
             </h1>
-            <p className="text-lg md:text-xl text-muted max-w-2xl mb-12 font-medium">
+            <p className="text-lg md:text-xl text-muted max-w-2xl mb-4 font-medium">
               High-performance industrial tools for the modern engineer. Built with precision, minimal by design.
             </p>
-            <TerminalCommand command="climon install all" />
+            {/* <TerminalCommand command="climon install all" /> */}
+            <TerminalSimulation />
           </motion.div>
 
           {/* Tool Showcase */}
@@ -173,6 +177,10 @@ export default function Home() {
               </motion.div>
             </div>
           </section>
+
+          <BentoFeatures />
+
+          <InstallTabs />
         </section>
       </main>
 
