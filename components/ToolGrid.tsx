@@ -1,35 +1,29 @@
 "use client"
 
-import { Globe, Bot, Radar, ArrowUpRight } from "lucide-react"
+import {
+    Globe,
+    Bot,
+    Radar,
+    Terminal,
+    ArrowUpRight,
+    Activity,
+    ShieldCheck
+} from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import toolsData from "@/content/tools/tools.json"
 
-const tools = [
-    {
-        title: "PyCurl",
-        description: "A simplified, colorized, and JSON-native HTTP client for testing APIs. Native C-bindings for unprecedented performance.",
-        icon: Globe,
-        command: "pycurl get api.com",
-        status: "v1.1.0",
-        statusColor: "bg-green-500/10 text-green-500 border-green-500/20",
-    },
-    {
-        title: "DevMate",
-        description: "A powerful developer companion designed to streamline your local workflow, automating container management and orchestrating dev environments with ease.",
-        icon: Bot,
-        command: "devmate deploy <repo_url>",
-        status: "Beta",
-        statusColor: "bg-blue-500/10 text-blue-500 border-blue-500/20",
-    },
-    {
-        title: "NetScan",
-        description: "Lightweight network discovery and port scanning tool. Industrial grade security auditing with zero overhead.",
-        icon: Radar,
-        command: "netscan --local",
-        status: "Coming Soon",
-        statusColor: "bg-muted/10 text-muted border-muted/20",
-    },
-];
+const iconMap: Record<string, any> = {
+    Globe,
+    Bot,
+    Radar,
+    Terminal,
+    Activity,
+    ShieldCheck
+}
+
+// Show the primary 3 tools on the homepage
+const tools = toolsData.slice(0, 3);
 
 export function ToolGrid() {
     return (
@@ -52,9 +46,15 @@ export function ToolGrid() {
                         <div>
                             <div className="flex items-start justify-between mb-8">
                                 <div className="size-12 bg-foreground text-background rounded-2xl flex items-center justify-center">
-                                    <tool.icon className="h-6 w-6" />
+                                    {(() => {
+                                        const Icon = iconMap[tool.icon] || Terminal
+                                        return <Icon className="h-6 w-6" />
+                                    })()}
                                 </div>
-                                <div className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border ${tool.statusColor}`}>
+                                <div className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border ${tool.status === 'Stable' ? 'border-green-500/20 text-green-500 bg-green-500/5' :
+                                        tool.status === 'Beta' ? 'border-orange-500/20 text-orange-500 bg-orange-500/5' :
+                                            'border-border text-muted bg-muted/5'
+                                    }`}>
                                     {tool.status}
                                 </div>
                             </div>

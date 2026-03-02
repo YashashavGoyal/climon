@@ -1,0 +1,80 @@
+[
+    {
+        "id": "pycurl",
+        "title": "PyCurl",
+        "category": "network",
+        "description": "JSON-native HTTP client for testing APIs and high-performance data transfer.",
+        "stars": "2.1k",
+        "version": "v1.2.0",
+        "status": "Stable",
+        "language": "Python",
+        "license": "MIT",
+        "command": "pycurl get api.com",
+        "icon": "Globe"
+    },
+    {
+        "id": "devmate",
+        "title": "DevMate",
+        "category": "automation",
+        "description": "Automate project scaffolding, git hooks, and containerized dev environments.",
+        "stars": "850",
+        "version": "Beta",
+        "status": "Beta",
+        "language": "Python",
+        "license": "MIT",
+        "command": "devmate deploy <repo_url>",
+        "icon": "Bot"
+    },
+    {
+        "id": "netscan",
+        "title": "NetScan",
+        "category": "network",
+        "description": "Lightweight local network discovery and industrial-grade security auditing.",
+        "stars": "1.2k",
+        "version": "v0.9.0",
+        "status": "v0.9.0",
+        "language": "Go",
+        "license": "MIT",
+        "command": "netscan --local",
+        "icon": "Radar"
+    },
+    {
+        "id": "climon",
+        "title": "Climon Core",
+        "category": "system",
+        "description": "Universal installer and package manager for the entire Climon ecosystem.",
+        "stars": "4.5k",
+        "version": "v2.0.0",
+        "status": "Stable",
+        "language": "Rust",
+        "license": "MIT",
+        "command": "climon install all",
+        "icon": "Terminal"
+    },
+    {
+        "id": "logpipe",
+        "title": "LogPipe",
+        "category": "system",
+        "description": "Real-time log streaming and aggregation for distributed systems.",
+        "stars": "320",
+        "version": "Planned",
+        "status": "Planned",
+        "language": "Go",
+        "license": "MIT",
+        "command": "logpipe --stream",
+        "icon": "Activity"
+    },
+    {
+        "id": "keyvault",
+        "title": "KeyVault",
+        "category": "system",
+        "description": "Secure secret management with industrial-grade encryption.",
+        "stars": "540",
+        "version": "Planned",
+        "status": "Planned",
+        "language": "Rust",
+        "license": "MIT",
+        "command": "keyvault unlock",
+        "icon": "ShieldCheck"
+    }
+]

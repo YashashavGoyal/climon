@@ -34,7 +34,7 @@ export function Navbar() {
                     </Link>
                     <div className="hidden md:flex items-center gap-6">
                         <Link
-                            href="#"
+                            href="/tools"
                             className="text-sm font-medium text-muted hover:text-foreground transition-colors"
                         >
                             Tools

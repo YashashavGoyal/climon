@@ -24,6 +24,10 @@ const features = [
 export function Philosophy() {
     return (
         <section className="mt-12 py-12 border-y border-border">
+            <div className="flex items-center justify-between mb-12">
+                <h2 className="text-xs font-bold uppercase tracking-widest text-muted">Why Climon?</h2>
+                <div className="h-px flex-1 bg-border ml-4"></div>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
                 {features.map((feature, index) => (
                     <motion.div

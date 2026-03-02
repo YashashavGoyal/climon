@@ -38,7 +38,7 @@ export function Footer() {
                             <li><Link href="#" className="text-muted hover:text-foreground text-sm transition-colors">PyCurl Engine</Link></li>
                             <li><Link href="#" className="text-muted hover:text-foreground text-sm transition-colors">DevMate (Beta)</Link></li>
                             <li><Link href="#" className="text-muted hover:text-foreground text-sm transition-colors">NetScan Pro</Link></li>
-                            <li><Link href="#" className="text-muted hover:text-foreground text-sm transition-colors">All Utilities</Link></li>
+                            <li><Link href="/tools" className="text-muted hover:text-foreground text-sm transition-colors">All Utilities</Link></li>
                         </ul>
                     </div>
 

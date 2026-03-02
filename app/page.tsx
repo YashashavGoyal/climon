@@ -49,7 +49,6 @@ export default function Home() {
           <ToolGrid />
 
           {/* 5. "Why Climon?" (The Philosophy) */}
-          {/* Placing Philosophy before Specs for better flow */}
           <Philosophy />
 
           {/* 4. Technical Specs (The Data Sheet) */}

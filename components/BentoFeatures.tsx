@@ -52,7 +52,7 @@ export function BentoFeatures() {
                     <BentoCard
                         icon={Zap}
                         title="Fast"
-                        description="Written in Python/TS, compiled to static binaries. Zero startup latency, industrial performance."
+                        description="Written in Python/Go/Rust, compiled to static binaries. Zero startup latency, industrial performance."
                         className="h-full"
                     />
                 </motion.div>
