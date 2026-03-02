@@ -34,7 +34,7 @@ export function InstallTabs() {
     const [activeTab, setActiveTab] = useState(platforms[0].id)
 
     return (
-        <section className="mt-48 mb-32 border-t border-border pt-24 text-center">
+        <section className="mt-12 mb-32 border-t border-border pt-24 text-center">
             <div className="max-w-4xl mx-auto">
                 <h2 className="text-3xl font-bold mb-4">Ready to gear up?</h2>
                 <p className="text-muted mb-12">Select your platform and get started in seconds.</p>
