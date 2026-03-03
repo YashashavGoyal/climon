@@ -46,7 +46,7 @@ export function Navbar() {
                             Docs
                         </Link>
                         <Link
-                            href="#"
+                            href="/about"
                             className="text-sm font-medium text-muted hover:text-foreground transition-colors"
                         >
                             About
