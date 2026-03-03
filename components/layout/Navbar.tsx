@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Github, Terminal, Search } from "lucide-react"
-import { ThemeToggle } from "./ThemeToggle"
+import { ThemeToggle } from "../ui/ThemeToggle"
 import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils";
 

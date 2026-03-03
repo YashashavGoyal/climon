@@ -1,14 +1,15 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Navbar } from "@/components/Navbar"
-import { Footer } from "@/components/Footer"
-import { HeroInput } from "@/components/HeroInput"
-import { TerminalSimulation } from "@/components/TerminalSimulation"
-import { ToolGrid } from "@/components/ToolGrid"
-import { TechSpecs } from "@/components/TechSpecs"
-import { Philosophy } from "@/components/Philosophy"
-import { InstallTabs } from "@/components/InstallTabs"
+import { Navbar } from "@/components/layout/Navbar"
+import { Footer } from "@/components/layout/Footer"
+import { HeroInput } from "@/components/terminal/HeroInput"
+import { TerminalSimulation } from "@/components/terminal/TerminalSimulation"
+import { ToolGrid } from "@/components/sections/ToolGrid"
+import { TechSpecs } from "@/components/sections/TechSpecs"
+import { BentoFeatures } from "@/components/sections/BentoFeatures"
+import { Philosophy } from "@/components/sections/Philosophy"
+import { InstallTabs } from "@/components/sections/InstallTabs"
 
 export default function Home() {
   return (
@@ -40,7 +41,7 @@ export default function Home() {
           {/* 2. Terminal Simulation (The Proof) */}
           <section className="py-12">
             <div className="flex flex-col items-center">
-              <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-muted mb-8">Live Demonstration</h2>
+              <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-muted mb-6">Live Demonstration</h2>
               <TerminalSimulation />
             </div>
           </section>

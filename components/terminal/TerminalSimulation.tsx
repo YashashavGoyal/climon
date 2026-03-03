@@ -63,7 +63,7 @@ export function TerminalSimulation() {
     }, [visibleLines])
 
     return (
-        <div className="w-full max-w-3xl mx-auto mt-16 scale-90 sm:scale-100">
+        <div className="w-full max-w-3xl mx-auto mt-12 scale-90 sm:scale-100">
             <div className="rounded-xl overflow-hidden border border-border bg-card shadow-2xl">
                 {/* Terminal Header */}
                 <div className="bg-muted/20 px-4 py-3 border-b border-border flex items-center gap-2">

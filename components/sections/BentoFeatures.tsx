@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { BentoCard } from "./BentoCard"
+import { BentoCard } from "../ui/BentoCard"
 import {
     Terminal,
     Zap,
