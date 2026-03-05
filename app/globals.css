@@ -50,4 +50,30 @@
     opacity: 0.05;
     pointer-events: none;
   }
+
+  .grid-line-h {
+    @apply w-full h-px bg-border/20 opacity-0;
+  }
+
+  .grid-line-v {
+    @apply h-full w-px bg-border/50;
+  }
+
+  .grid-plus {
+    @apply relative flex items-center justify-center;
+  }
+
+  .grid-plus::before,
+  .grid-plus::after {
+    content: '';
+    @apply absolute bg-border/40;
+  }
+
+  .grid-plus::before {
+    @apply w-[11px] h-px;
+  }
+
+  .grid-plus::after {
+    @apply h-[11px] w-px;
+  }
 }
