@@ -19,14 +19,14 @@ export function TechSpecs() {
                 <div className="h-px flex-1 bg-border ml-4"></div>
             </div>
 
-            <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
+            <div className="overflow-x-auto -mx-6 px-6">
+                <table className="w-full text-left border-collapse min-w-[600px] md:min-w-0">
                     <thead>
                         <tr className="border-b border-border">
-                            <th className="py-4 text-xs font-bold uppercase tracking-widest text-muted">Tool Name</th>
-                            <th className="py-4 text-xs font-bold uppercase tracking-widest text-muted">Language</th>
-                            <th className="py-4 text-xs font-bold uppercase tracking-widest text-muted">Status</th>
-                            <th className="py-4 text-xs font-bold uppercase tracking-widest text-muted text-right">License</th>
+                            <th className="py-4 text-[10px] md:text-xs font-bold uppercase tracking-widest text-muted">Tool Name</th>
+                            <th className="py-4 text-[10px] md:text-xs font-bold uppercase tracking-widest text-muted">Language</th>
+                            <th className="py-4 text-[10px] md:text-xs font-bold uppercase tracking-widest text-muted">Status</th>
+                            <th className="py-4 text-[10px] md:text-xs font-bold uppercase tracking-widest text-muted text-right">License</th>
                         </tr>
                     </thead>
                     <tbody>

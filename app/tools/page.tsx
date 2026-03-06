@@ -52,12 +52,12 @@ export default function ToolsPage() {
                 <div className="max-w-7xl mx-auto px-6">
 
                     {/* Header (Hero) */}
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-20">
+                    <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 mb-16 md:mb-20">
                         <div className="max-w-2xl">
-                            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70">
+                            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70 leading-[1.1]">
                                 Construct Your Workflow.
                             </h1>
-                            <p className="text-xl text-muted font-medium leading-relaxed">
+                            <p className="text-lg md:text-xl text-muted font-medium leading-relaxed">
                                 A curated suite of binary-compatible CLI tools. Zero dependencies. Instant startup. Engineered for industrial-grade reliability.
                             </p>
                         </div>
@@ -94,18 +94,18 @@ export default function ToolsPage() {
                     </div>
 
                     {/* Main Split Layout */}
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pt-12 border-t border-border/50">
+                    <div className="flex flex-col lg:grid lg:grid-cols-12 gap-12 pt-12 border-t border-border/50">
 
                         {/* Sidebar */}
-                        <aside className="lg:col-span-3 space-y-12 h-fit lg:sticky lg:top-32">
+                        <aside className="lg:col-span-3 space-y-8 md:space-y-12 h-fit lg:sticky lg:top-32 order-2 lg:order-1">
                             <div>
                                 <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-muted mb-6">Categories</h3>
-                                <nav className="flex flex-col gap-1">
+                                <nav className="grid grid-cols-2 sm:grid-cols-4 lg:flex lg:flex-col gap-2 lg:gap-1">
                                     {categories.map((cat) => (
                                         <button
                                             key={cat.name}
                                             className={cn("flex items-center justify-between px-4 py-3 rounded-xl hover:bg-muted/50 transition-all text-sm font-semibold text-muted hover:text-foreground group text-left border border-transparent hover:border-border/50", {
-                                                "bg-muted/50": category === cat.name.toLowerCase(),
+                                                "bg-muted/50 text-foreground border-border/50": category === cat.name.toLowerCase(),
                                             })}
                                             onClick={() => setCategory(cat.name.toLowerCase())}
                                         >
@@ -136,29 +136,28 @@ export default function ToolsPage() {
                         </aside>
 
                         {/* Right Content */}
-                        <div className="lg:col-span-9 space-y-12">
+                        <div className="lg:col-span-9 space-y-10 md:space-y-12 order-1 lg:order-2">
 
                             {/* Search Banner */}
                             <motion.div
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="relative overflow-hidden rounded-[2.5rem] bg-[#0A0A0B] border border-white/5 p-8 md:p-10 mb-12 group"
+                                className="relative overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] bg-[#0A0A0B] border border-white/5 p-6 md:p-10 mb-8 md:mb-12 group"
                             >
                                 {/* Concentric Circles Background Decoration - Scale down */}
                                 <div className="absolute top-0 right-0 w-full h-full pointer-events-none opacity-[0.05] overflow-hidden">
-                                    <div className="absolute top-1/2 left-[75%] -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] border border-white rounded-full" />
-                                    <div className="absolute top-1/2 left-[75%] -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-white rounded-full" />
-                                    <div className="absolute top-1/2 left-[75%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white rounded-full" />
-                                    <div className="absolute top-1/2 left-[75%] -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white rounded-full" />
+                                    <div className="absolute top-1/2 left-[75%] -translate-x-1/2 -translate-y-1/2 w-[150px] md:w-[250px] h-[150px] md:h-[250px] border border-white rounded-full" />
+                                    <div className="absolute top-1/2 left-[75%] -translate-x-1/2 -translate-y-1/2 w-[250px] md:w-[400px] h-[250px] md:h-[400px] border border-white rounded-full" />
+                                    <div className="absolute top-1/2 left-[75%] -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[600px] h-[400px] md:h-[600px] border border-white rounded-full" />
                                 </div>
 
-                                <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
+                                <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-10">
                                     <div className="max-w-xl">
-                                        <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter mb-4 leading-tight">
+                                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tighter mb-4 leading-tight">
                                             Navigate with <span className="text-white/60">ease</span>.
                                         </h2>
-                                        <p className="text-white/40 text-base font-medium leading-relaxed max-w-md mb-8">
-                                            Find tools, examples, reference material <br className="hidden md:block" /> Use the global search to find tools instantly.
+                                        <p className="text-white/40 text-sm md:text-base font-medium leading-relaxed max-w-sm mb-6 md:mb-8">
+                                            Find tools, examples, reference material. Use the global search to find tools instantly.
                                         </p>
 
                                         {/* New Installer CTA */}
@@ -166,7 +165,7 @@ export default function ToolsPage() {
                                             <motion.div
                                                 whileHover={{ scale: 1.02 }}
                                                 whileTap={{ scale: 0.98 }}
-                                                className="px-5 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-white/30 transition-all flex items-center gap-3 group/cta cursor-pointer"
+                                                className="w-full sm:w-auto px-5 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-white/30 transition-all flex items-center gap-3 group/cta cursor-pointer"
                                             >
                                                 <div className="size-8 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 group-hover/cta:bg-white/10 transition-colors">
                                                     <Terminal className="size-4 text-white/80" />
@@ -180,45 +179,45 @@ export default function ToolsPage() {
                                                 <ArrowUpRight className="size-3.5 text-white/20 group-hover/cta:text-white/60 group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5 transition-all ml-2" />
                                             </motion.div>
 
-                                            <p className="text-[10px] text-white/20 font-bold uppercase tracking-[0.2em]">
-                                                Registry v2.4 <span className="mx-2 opacity-50">•</span> Security Audited
+                                            <p className="text-[9px] md:text-[10px] text-white/20 font-bold uppercase tracking-[0.2em] mt-2 sm:mt-0">
+                                                Registry v2.4 <span className="mx-2 opacity-30">•</span> Security Audited
                                             </p>
                                         </div>
                                     </div>
 
-                                    <div className="relative flex items-center gap-4 pr-10">
+                                    <div className="relative flex items-center gap-3 md:gap-4 pr-0 md:pr-10 scale-90 md:scale-100 self-center md:self-auto mt-4 md:mt-0">
                                         {/* Physical Keyboard Keys Effect - Smaller */}
                                         <motion.div
                                             animate={{ y: [0, -10, 0] }}
                                             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                                            className="h-16 px-4 bg-[#141416] border border-white/10 rounded-[1.2rem] flex items-center justify-center gap-2 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.9)] relative group/key"
+                                            className="h-14 md:h-16 px-3 md:px-4 bg-[#141416] border border-white/10 rounded-[1rem] md:rounded-[1.2rem] flex items-center justify-center gap-2 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.9)] relative group/key"
                                         >
-                                            <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent rounded-[1.2rem]" />
-                                            <Command className="size-5 text-white/90" />
-                                            <span className="text-[10px] font-bold text-white/40 select-none uppercase tracking-widest">/ ctrl</span>
+                                            <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent rounded-[1rem] md:rounded-[1.2rem]" />
+                                            <Command className="size-4 md:size-5 text-white/90" />
+                                            <span className="text-[9px] md:text-[10px] font-bold text-white/40 select-none uppercase tracking-widest">/ ctrl</span>
                                         </motion.div>
-                                        <div className="text-white/20 font-bold text-xl">+</div>
+                                        <div className="text-white/20 font-bold text-lg">+</div>
                                         <motion.div
                                             animate={{ y: [0, 10, 0] }}
                                             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                                            className="size-16 bg-[#141416] border border-white/10 rounded-[1.2rem] flex items-center justify-center shadow-[0_20px_40px_-10px_rgba(0,0,0,0.9)] relative group/key"
+                                            className="size-14 md:size-16 bg-[#141416] border border-white/10 rounded-[1rem] md:rounded-[1.2rem] flex items-center justify-center shadow-[0_20px_40px_-10px_rgba(0,0,0,0.9)] relative group/key"
                                         >
-                                            <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent rounded-[1.2rem]" />
-                                            <span className="text-2xl font-bold text-white/80 select-none">K</span>
+                                            <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent rounded-[1rem] md:rounded-[1.2rem]" />
+                                            <span className="text-xl md:text-2xl font-bold text-white/80 select-none">K</span>
                                         </motion.div>
 
-                                        {/* Floating Tech Badges */}
+                                        {/* Floating Tech Badges - Hide on mobile */}
                                         <motion.div
                                             animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.7, 0.4] }}
                                             transition={{ duration: 4, repeat: Infinity }}
-                                            className="absolute -top-10 left-10 size-10 bg-blue-500/10 rounded-xl flex items-center justify-center border border-blue-500/20 backdrop-blur-md overflow-hidden shadow-2xl"
+                                            className="absolute -top-10 left-10 size-10 bg-blue-500/10 rounded-xl hidden md:flex items-center justify-center border border-blue-500/20 backdrop-blur-md overflow-hidden shadow-2xl"
                                         >
                                             <Globe className="size-5 text-blue-400" />
                                         </motion.div>
                                         <motion.div
                                             animate={{ y: [0, -20, 0], x: [0, 8, 0] }}
                                             transition={{ duration: 8, repeat: Infinity }}
-                                            className="absolute -right-4 -top-2 size-10 bg-orange-500/10 rounded-xl flex items-center justify-center border border-orange-500/20 backdrop-blur-md overflow-hidden shadow-2xl"
+                                            className="absolute -right-4 -top-2 size-10 bg-orange-500/10 rounded-xl hidden md:flex items-center justify-center border border-orange-500/20 backdrop-blur-md overflow-hidden shadow-2xl"
                                         >
                                             <Radar className="size-5 text-orange-400" />
                                         </motion.div>
@@ -278,22 +277,22 @@ export default function ToolsPage() {
 
                     {/* Technical Specs Table */}
                     <section className="mt-32 pt-20 border-t border-border/50">
-                        <div className="flex items-center justify-between mb-12">
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-12">
                             <div className="flex items-center gap-3">
                                 <ShieldCheck className="size-5 text-foreground/70" />
                                 <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-foreground">Technical Specification Registry</h2>
                             </div>
-                            <div className="h-px flex-1 bg-border/50 ml-6 hidden md:block"></div>
+                            <div className="h-px flex-1 bg-border/50 ml-6 hidden lg:block"></div>
                         </div>
 
-                        <div className="overflow-x-auto rounded-2xl border border-border bg-card/50">
-                            <table className="w-full text-left border-collapse">
+                        <div className="overflow-x-auto -mx-6 px-6">
+                            <table className="w-full text-left border-collapse min-w-[700px] lg:min-w-0">
                                 <thead>
                                     <tr className="border-b border-border bg-muted/20">
-                                        <th className="px-8 py-5 text-[10px] font-bold uppercase tracking-widest text-muted">Tool Name</th>
-                                        <th className="px-8 py-5 text-[10px] font-bold uppercase tracking-widest text-muted">Category</th>
-                                        <th className="px-8 py-5 text-[10px] font-bold uppercase tracking-widest text-muted">Language</th>
-                                        <th className="px-8 py-5 text-[10px] font-bold uppercase tracking-widest text-muted text-right">Status</th>
+                                        <th className="px-6 md:px-8 py-5 text-[10px] font-bold uppercase tracking-widest text-muted">Tool Name</th>
+                                        <th className="px-6 md:px-8 py-5 text-[10px] font-bold uppercase tracking-widest text-muted">Category</th>
+                                        <th className="px-6 md:px-8 py-5 text-[10px] font-bold uppercase tracking-widest text-muted">Language</th>
+                                        <th className="px-6 md:px-8 py-5 text-[10px] font-bold uppercase tracking-widest text-muted text-right">Status</th>
                                     </tr>
                                 </thead>
                                 <tbody className="font-medium">

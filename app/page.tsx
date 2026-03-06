@@ -19,17 +19,17 @@ export default function Home() {
       <main className="flex-1">
         <div className="max-w-7xl mx-auto px-6">
           {/* 1. Hero Section (The Hook) */}
-          <section className="py-12 md:py-20">
+          <section className="py-12 md:py-20 lg:py-32">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="text-center flex flex-col items-center"
             >
-              <h1 className="text-6xl md:text-8xl leading-[1.3] font-extrabold tracking-tighter mb-8 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70">
+              <h1 className="text-5xl sm:text-7xl md:text-8xl leading-[1.1] md:leading-[1.3] font-extrabold tracking-tighter mb-8 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70">
                 The Developer Utility Belt
               </h1>
-              <p className="text-xl md:text-2xl text-muted max-w-3xl mb-12 font-medium leading-relaxed">
+              <p className="text-lg md:text-2xl text-muted max-w-3xl mb-12 font-medium leading-relaxed px-4 md:px-0">
                 A unified ecosystem of high-performance CLI tools. <br className="hidden md:block" />
                 Install once, run anywhere. Built for the modern engineer.
               </p>

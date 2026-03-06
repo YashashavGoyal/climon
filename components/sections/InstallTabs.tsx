@@ -33,6 +33,14 @@ const platforms = [
 export function InstallTabs() {
     const [activeTab, setActiveTab] = useState(platforms[0].id)
 
+    const [copied, setCopied] = useState(false)
+
+    const handleCopy = (command: string) => {
+        navigator.clipboard.writeText(command)
+        setCopied(true)
+        setTimeout(() => setCopied(false), 2000)
+    }
+
     return (
         <section className="mt-12 mb-32 border-t border-border pt-24 text-center">
             <div className="max-w-4xl mx-auto">
@@ -41,12 +49,12 @@ export function InstallTabs() {
 
                 <div className="bg-card border border-border rounded-2xl p-2 sm:p-4 shadow-sm">
                     {/* Custom Tabs List */}
-                    <div className="flex flex-wrap justify-center gap-1 mb-8 bg-muted/20 p-1 rounded-xl w-fit mx-auto">
+                    <div className="flex flex-wrap justify-center gap-1.5 mb-8 bg-muted/20 p-1.5 rounded-xl w-full sm:w-fit mx-auto">
                         {platforms.map((platform) => (
                             <button
                                 key={platform.id}
                                 onClick={() => setActiveTab(platform.id)}
-                                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all relative ${activeTab === platform.id ? "text-foreground" : "text-muted hover:text-foreground"
+                                className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all relative ${activeTab === platform.id ? "text-foreground" : "text-muted hover:text-foreground"
                                     }`}
                             >
                                 {activeTab === platform.id && (
@@ -56,7 +64,10 @@ export function InstallTabs() {
                                         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                                     />
                                 )}
-                                <span className="relative z-10">{platform.name} <span className="text-[10px] opacity-50 uppercase ml-1">({platform.label})</span></span>
+                                <span className="relative z-10 flex flex-col sm:flex-row items-center sm:gap-1.5">
+                                    <span>{platform.name}</span>
+                                    <span className="text-[9px] opacity-50 uppercase sm:ml-0">({platform.label})</span>
+                                </span>
                             </button>
                         ))}
                     </div>
@@ -81,10 +92,10 @@ export function InstallTabs() {
                                                     {platform.command}
                                                 </code>
                                                 <button
-                                                    onClick={() => navigator.clipboard.writeText(platform.command)}
+                                                    onClick={() => handleCopy(platform.command)}
                                                     className="px-3 py-1.5 rounded-md bg-foreground text-background text-[10px] font-bold uppercase tracking-wider hover:opacity-90 transition-opacity whitespace-nowrap"
                                                 >
-                                                    Copy
+                                                    {copied ? "Copied!" : "Copy"}
                                                 </button>
                                             </div>
 
