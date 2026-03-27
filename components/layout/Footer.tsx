@@ -66,17 +66,17 @@ export function Footer() {
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="flex items-center gap-6">
-                        <span className="text-muted text-xs">© 2024 Climon Industrial. MIT Licensed.</span>
+                        <span className="text-muted text-[10px] font-bold uppercase tracking-widest opacity-60">© 2024 Climon Industrial. MIT Licensed.</span>
                         <div className="h-4 w-px bg-border hidden md:block" />
-                        <span className="text-muted text-xs font-mono uppercase tracking-widest hidden md:block">Built to last</span>
+                        <span className="text-muted text-[10px] font-mono font-bold uppercase tracking-[0.3em] hidden md:block">Built to last</span>
                     </div>
 
-                    <div className="flex items-center gap-3 px-4 py-2 bg-muted/20 border border-border rounded-full">
+                    <div className="flex items-center gap-3 px-4 py-2 bg-white/[0.02] border border-border rounded-sm">
                         <div className="relative size-2">
-                            <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75" />
-                            <div className="relative size-2 bg-green-500 rounded-full" />
+                            <div className="absolute inset-0 bg-green-500/20 rounded-full animate-ping opacity-75" />
+                            <div className="relative size-2 bg-green-500/50 rounded-sm" />
                         </div>
-                        <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-muted">All Systems Operational</span>
+                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted">All Systems Operational</span>
                     </div>
                 </div>
             </div>

@@ -70,17 +70,17 @@
         "icon": "Activity"
     },
     {
-        "id": "keyvault",
-        "title": "KeyVault",
+        "id": "arca",
+        "title": "Arca",
         "category": "system",
         "description": "Secure secret management with industrial-grade encryption.",
         "stars": "540",
-        "version": "Planned",
-        "status": "Planned",
-        "isActive": false,
-        "language": "Rust",
+        "version": "v0.1.0",
+        "status": "Beta",
+        "isActive": true,
+        "language": "Go",
         "license": "MIT",
-        "command": "keyvault unlock",
+        "command": "arca init",
         "icon": "ShieldCheck"
     }
 ]

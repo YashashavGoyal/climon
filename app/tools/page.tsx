@@ -54,7 +54,7 @@ export default function ToolsPage() {
                     {/* Header (Hero) */}
                     <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 mb-16 md:mb-20">
                         <div className="max-w-2xl">
-                            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70 leading-[1.1]">
+                            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-foreground leading-[1.1]">
                                 Construct Your Workflow.
                             </h1>
                             <p className="text-lg md:text-xl text-muted font-medium leading-relaxed">
@@ -66,7 +66,7 @@ export default function ToolsPage() {
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            className="relative p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden group"
+                            className="relative p-6 rounded-lg border border-border bg-card overflow-hidden group"
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-foreground/5 to-transparent opacity-50" />
                             <div className="relative flex flex-col gap-4">
@@ -104,8 +104,8 @@ export default function ToolsPage() {
                                     {categories.map((cat) => (
                                         <button
                                             key={cat.name}
-                                            className={cn("flex items-center justify-between px-4 py-3 rounded-xl hover:bg-muted/50 transition-all text-sm font-semibold text-muted hover:text-foreground group text-left border border-transparent hover:border-border/50", {
-                                                "bg-muted/50 text-foreground border-border/50": category === cat.name.toLowerCase(),
+                                            className={cn("flex items-center justify-between px-4 py-3 rounded-lg hover:bg-card-hover transition-all text-sm font-semibold text-muted hover:text-foreground group text-left border border-transparent hover:border-border", {
+                                                "bg-card-hover text-foreground border-border": category === cat.name.toLowerCase(),
                                             })}
                                             onClick={() => setCategory(cat.name.toLowerCase())}
                                         >
@@ -117,11 +117,11 @@ export default function ToolsPage() {
                             </div>
 
                             {/* System Status Widget */}
-                            <div className="p-5 rounded-2xl border border-border bg-muted/20 space-y-4">
+                            <div className="p-5 rounded-lg border border-border bg-card space-y-4">
                                 <div className="flex items-center gap-3">
                                     <div className="relative size-2.5">
-                                        <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75" />
-                                        <div className="relative size-2.5 bg-green-500 rounded-full" />
+                                        <div className="absolute inset-0 bg-green-500/20 rounded-full animate-ping opacity-75" />
+                                        <div className="relative size-2.5 bg-green-500/50 rounded-sm" />
                                     </div>
                                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-foreground">Global Registry</span>
                                 </div>
@@ -190,20 +190,20 @@ export default function ToolsPage() {
                                         <motion.div
                                             animate={{ y: [0, -10, 0] }}
                                             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                                            className="h-14 md:h-16 px-3 md:px-4 bg-[#141416] border border-white/10 rounded-[1rem] md:rounded-[1.2rem] flex items-center justify-center gap-2 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.9)] relative group/key"
+                                            className="h-14 md:h-16 px-3 md:px-4 bg-card border border-border rounded-lg flex items-center justify-center gap-2 shadow-2xl relative group/key"
                                         >
-                                            <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent rounded-[1rem] md:rounded-[1.2rem]" />
-                                            <Command className="size-4 md:size-5 text-white/90" />
-                                            <span className="text-[9px] md:text-[10px] font-bold text-white/40 select-none uppercase tracking-widest">/ ctrl</span>
+                                            <div className="absolute inset-0 bg-foreground/[0.02] rounded-lg" />
+                                            <Command className="size-4 md:size-5 text-foreground/90" />
+                                            <span className="text-[9px] md:text-[10px] font-bold text-foreground/40 select-none uppercase tracking-widest">/ ctrl</span>
                                         </motion.div>
-                                        <div className="text-white/20 font-bold text-lg">+</div>
+                                        <div className="text-muted/20 font-bold text-lg">+</div>
                                         <motion.div
                                             animate={{ y: [0, 10, 0] }}
                                             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                                            className="size-14 md:size-16 bg-[#141416] border border-white/10 rounded-[1rem] md:rounded-[1.2rem] flex items-center justify-center shadow-[0_20px_40px_-10px_rgba(0,0,0,0.9)] relative group/key"
+                                            className="size-14 md:size-16 bg-card border border-border rounded-lg flex items-center justify-center shadow-2xl relative group/key"
                                         >
-                                            <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent rounded-[1rem] md:rounded-[1.2rem]" />
-                                            <span className="text-xl md:text-2xl font-bold text-white/80 select-none">K</span>
+                                            <div className="absolute inset-0 bg-foreground/[0.02] rounded-lg" />
+                                            <span className="text-xl md:text-2xl font-bold text-foreground/80 select-none">K</span>
                                         </motion.div>
 
                                         {/* Floating Tech Badges - Hide on mobile */}
@@ -233,25 +233,25 @@ export default function ToolsPage() {
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
-                                        className="group bg-card border border-border rounded-3xl p-8 flex flex-col justify-between hover:border-foreground/20 transition-all hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)]"
+                                        className="group bg-card border border-border rounded-lg p-8 flex flex-col justify-between hover:border-foreground/20 transition-all hover:bg-card-hover"
                                     >
                                         <div>
                                             <div className="flex items-start justify-between mb-8">
-                                                <div className="size-14 bg-foreground text-background rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500">
+                                                <div className="size-14 bg-foreground text-background rounded flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-500">
                                                     {(() => {
                                                         const Icon = iconMap[tool.icon] || Terminal
                                                         return <Icon className="h-7 w-7" />
                                                     })()}
                                                 </div>
-                                                <div className="px-3 py-1 rounded-full text-[10px] font-bold font-mono uppercase tracking-wider border border-border group-hover:border-foreground/20 transition-colors">
+                                                <div className="px-3 py-1 rounded border border-border group-hover:border-foreground/20 transition-colors text-[10px] font-bold font-mono uppercase tracking-widest bg-muted/10">
                                                     {tool.version}
                                                 </div>
                                             </div>
-                                            <h3 className="text-2xl font-bold mb-3 flex items-center gap-2 tracking-tight">
+                                            <h3 className="text-xl font-bold mb-3 flex items-center gap-2 tracking-tight text-foreground">
                                                 {tool.title}
                                                 <ArrowUpRight className="h-4 w-4 opacity-0 group-hover:opacity-40 transition-all translate-y-1 group-hover:translate-y-0" />
                                             </h3>
-                                            <p className="text-muted leading-relaxed mb-8 font-medium">
+                                            <p className="text-muted leading-relaxed mb-8 text-[13px] font-medium">
                                                 {tool.description}
                                             </p>
                                         </div>
@@ -299,23 +299,19 @@ export default function ToolsPage() {
                                     {tools.map((spec, index) => (
                                         <tr
                                             key={spec.id}
-                                            className="border-b border-border/50 hover:bg-muted/30 transition-colors last:border-0"
+                                            className="border-b border-border/50 hover:bg-card-hover transition-colors last:border-0"
                                         >
                                             <td className="px-8 py-6 font-bold text-lg tracking-tight">{spec.title}</td>
-                                            <td className="px-8 py-6 text-sm text-muted capitalize">{spec.category}</td>
+                                            <td className="px-8 py-6 text-sm text-bold uppercase tracking-widest text-muted/60">{spec.category}</td>
                                             <td className="px-8 py-6">
-                                                <span className="px-2 py-1 rounded-full border border-gray-500/20 text-gray-400 bg-gray-500/5 text-[10px] font-bold uppercase tracking-widest">{spec.language}</span>
+                                                <span className="px-2 py-1 rounded border border-gray-500/20 text-gray-400 bg-gray-500/10 text-[10px] font-bold uppercase tracking-widest">{spec.language}</span>
                                             </td>
                                             <td className="px-8 py-6 text-right">
-                                                <span className={`px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest border 
-                                                ${spec.status === 'Stable' ? 'border-green-500/20 text-green-500 bg-green-500/5' :
-                                                        spec.status[0] === 'v' ? 'border-orange-500/20 text-orange-500 bg-orange-500/5' :
-                                                            spec.status === 'Beta' ? 'border-yellow-500/20 text-yellow-500 bg-yellow-500/5' :
-                                                                spec.status === 'Planned' ? 'border-cyan-500/20 text-cyan-500 bg-cyan-500/5' :
-                                                                    spec.status === 'Stopped' ? 'border-red-500/20 text-red-500 bg-red-500/5' :
-                                                                        spec.status === 'Deprecated' ? 'border-red-500/20 text-red-500 bg-red-500/5' :
-                                                                            spec.status === 'Experimental' ? 'border-red-500/20 text-red-500 bg-red-500/5' :
-                                                                                'border-border text-muted bg-muted/20'
+                                                <span className={`px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest border 
+                                                ${spec.status === 'Stable' ? 'border-green-500/20 text-green-500 bg-green-500/10' :
+                                                        spec.status[0] === 'v' ? 'border-orange-500/20 text-orange-500 bg-orange-500/10' :
+                                                            spec.status === 'Beta' ? 'border-amber-500/20 text-amber-500 bg-amber-500/10' :
+                                                                'border-border text-muted bg-muted/10'
                                                     }`}>
                                                     {spec.status}
                                                 </span>

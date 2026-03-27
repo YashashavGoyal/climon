@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { Copy, Check } from "lucide-react"
 
 const lines = [
     { type: "command", text: "climon install pycurl", delay: 1000 },
@@ -17,6 +18,7 @@ export function TerminalSimulation() {
     const [visibleLines, setVisibleLines] = useState<number>(0)
     const [currentText, setCurrentText] = useState("")
     const [isTyping, setIsTyping] = useState(false)
+    const [copied, setCopied] = useState(false)
 
     useEffect(() => {
         if (visibleLines >= lines.length) return
@@ -64,16 +66,29 @@ export function TerminalSimulation() {
 
     return (
         <div className="w-full max-w-3xl mx-auto mt-12 scale-90 sm:scale-100">
-            <div className="rounded-xl overflow-hidden border border-border bg-card shadow-2xl">
+            <div className="rounded-lg overflow-hidden border border-border bg-card shadow-2xl">
                 {/* Terminal Header */}
-                <div className="bg-muted/20 px-4 py-3 border-b border-border flex items-center gap-2">
-                    <div className="flex gap-1.5">
-                        <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                        <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                        <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                <div className="bg-muted/10 px-4 py-3 border-b border-border flex items-center justify-between">
+                    <div className="flex gap-1.5 flex-1">
+                        <div className="w-3 h-3 rounded-full bg-red-500/50" />
+                        <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
+                        <div className="w-3 h-3 rounded-full bg-green-500/50" />
                     </div>
-                    <div className="flex-1 text-center text-[10px] sm:text-xs font-mono text-muted uppercase tracking-widest font-bold">
-                        zsh — climon
+                    <div className="text-[10px] sm:text-xs font-mono text-muted/50 uppercase tracking-[0.2em] font-bold flex-1 text-center">
+                        climon session — registry
+                    </div>
+                    <div className="flex-1 flex justify-end">
+                        <button
+                            onClick={() => {
+                                navigator.clipboard.writeText("climon install pycurl");
+                                setCopied(true);
+                                setTimeout(() => setCopied(false), 2000);
+                            }}
+                            className="p-1 px-2 rounded-md border border-border bg-background hover:bg-muted/10 text-muted hover:text-foreground transition-all flex items-center gap-1.5"
+                        >
+                            {copied ? <Check className="size-3 text-green-500" /> : <Copy className="size-3" />}
+                            <span className="text-[10px] font-bold uppercase tracking-widest hidden sm:inline">{copied ? 'Copied' : 'Copy'}</span>
+                        </button>
                     </div>
                 </div>
 

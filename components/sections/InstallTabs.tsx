@@ -38,35 +38,34 @@ export function InstallTabs() {
     const handleCopy = (command: string) => {
         navigator.clipboard.writeText(command)
         setCopied(true)
-        setTimeout(() => setCopied(false), 2000)
+        setTimeout(() => setCopied(false), 1000)
     }
 
     return (
-        <section className="mt-12 mb-32 border-t border-border pt-24 text-center">
+        <section className="mt-32 pt-24 border-t border-border text-center">
             <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold mb-4">Ready to gear up?</h2>
-                <p className="text-muted mb-12">Select your platform and get started in seconds.</p>
+                <h2 className="text-3xl font-bold mb-4 tracking-tight">Ready to gear up?</h2>
+                <p className="text-muted mb-16 font-medium leading-relaxed">Select your platform and get started in seconds.</p>
 
-                <div className="bg-card border border-border rounded-2xl p-2 sm:p-4 shadow-sm">
+                <div className="bg-card border border-border rounded-lg p-4 shadow-sm">
                     {/* Custom Tabs List */}
-                    <div className="flex flex-wrap justify-center gap-1.5 mb-8 bg-muted/20 p-1.5 rounded-xl w-full sm:w-fit mx-auto">
+                    <div className="flex flex-wrap justify-center gap-1.5 mb-8 bg-background border border-border p-1.5 rounded-lg w-full sm:w-fit mx-auto">
                         {platforms.map((platform) => (
                             <button
                                 key={platform.id}
                                 onClick={() => setActiveTab(platform.id)}
-                                className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all relative ${activeTab === platform.id ? "text-foreground" : "text-muted hover:text-foreground"
+                                className={`flex-1 sm:flex-none px-4 py-2 rounded-md text-xs font-bold uppercase tracking-widest transition-all relative ${activeTab === platform.id ? "text-foreground" : "text-muted hover:text-foreground"
                                     }`}
                             >
                                 {activeTab === platform.id && (
                                     <motion.div
                                         layoutId="active-tab"
-                                        className="absolute inset-0 bg-background border border-border rounded-lg shadow-sm"
+                                        className="absolute inset-0 bg-card-hover border border-border/50 rounded-md"
                                         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                                     />
                                 )}
                                 <span className="relative z-10 flex flex-col sm:flex-row items-center sm:gap-1.5">
                                     <span>{platform.name}</span>
-                                    <span className="text-[9px] opacity-50 uppercase sm:ml-0">({platform.label})</span>
                                 </span>
                             </button>
                         ))}
@@ -85,15 +84,17 @@ export function InstallTabs() {
                                         transition={{ duration: 0.2 }}
                                         className="w-full"
                                     >
-                                        <div className="bg-code-bg border border-border rounded-xl p-6 font-mono text-sm group relative overflow-hidden">
+                                        <div className="bg-card bg-white/10 border border-border rounded-lg p-6 font-mono text-sm group relative overflow-hidden transition-all hover:border-foreground/20">
                                             <div className="flex items-center justify-between gap-4">
-                                                <code className="text-foreground break-all text-left">
-                                                    <span className="text-muted/50 mr-2">$</span>
-                                                    {platform.command}
-                                                </code>
+                                                <div className="flex items-center gap-4 text-left">
+                                                    <span className="text-muted/50 select-none">$</span>
+                                                    <code className="text-foreground break-all">
+                                                        {platform.command}
+                                                    </code>
+                                                </div>
                                                 <button
                                                     onClick={() => handleCopy(platform.command)}
-                                                    className="px-3 py-1.5 rounded-md bg-foreground text-background text-[10px] font-bold uppercase tracking-wider hover:opacity-90 transition-opacity whitespace-nowrap"
+                                                    className="px-4 py-2 rounded-md bg-foreground text-background text-[10px] font-bold uppercase tracking-widest hover:opacity-90 transition-opacity whitespace-nowrap"
                                                 >
                                                     {copied ? "Copied!" : "Copy"}
                                                 </button>

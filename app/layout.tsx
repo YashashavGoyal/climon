@@ -36,6 +36,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="fixed inset-0 dot-pattern pointer-events-none -z-10" />
+          <div className="fixed inset-0 noise-texture opacity-[0.02] pointer-events-none z-50" />
           <div className="fixed inset-0 pointer-events-none -z-5">
             <div className="max-w-7xl mx-auto px-6 h-full relative">
               <GridLines

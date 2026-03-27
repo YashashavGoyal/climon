@@ -39,17 +39,17 @@ export function TechSpecs() {
                                 transition={{ delay: index * 0.05 }}
                                 className="border-b border-border/50 group hover:bg-muted/5 transition-colors"
                             >
-                                <td className="py-6 font-bold text-lg">{spec.name}</td>
-                                <td className="py-6 text-muted font-medium">{spec.language}</td>
+                                <td className="py-6 font-bold text-lg tracking-tight">{spec.name}</td>
+                                <td className="py-6 text-muted font-medium text-sm">{spec.language}</td>
                                 <td className="py-6">
-                                    <span className={`px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest border ${spec.status === 'Stable' ? 'border-green-500/20 text-green-500 bg-green-500/5' :
-                                        spec.status === 'Beta' ? 'border-orange-500/20 text-orange-500 bg-orange-500/5' :
-                                            'border-border text-muted bg-muted/20'
+                                    <span className={`px-2.5 py-1 rounded border text-[10px] font-bold uppercase tracking-widest ${spec.status === 'Stable' ? 'border-green-500/20 text-green-500 bg-green-500/10' :
+                                        spec.status === 'Beta' ? 'border-amber-500/20 text-amber-500 bg-amber-500/10' :
+                                            'border-border text-muted bg-muted/10'
                                         }`}>
                                         {spec.status}
                                     </span>
                                 </td>
-                                <td className="py-6 text-right font-medium text-xs tracking-widest uppercase">{spec.license}</td>
+                                <td className="py-6 text-right font-medium text-[11px] tracking-widest uppercase text-muted">{spec.license}</td>
                             </motion.tr>
                         ))}
                     </tbody>

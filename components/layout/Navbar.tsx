@@ -6,6 +6,7 @@ import { ThemeToggle } from "../ui/ThemeToggle"
 import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion"
+import { CommandPalette } from "../ui/CommandPalette"
 
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false)
@@ -46,7 +47,7 @@ export function Navbar() {
             <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6">
                 <div className="flex items-center gap-8">
                     <Link href="/" className="flex items-center gap-2 group">
-                        <div className="bg-foreground text-background p-1 rounded">
+                        <div className="bg-foreground text-background p-1 rounded-sm">
                             <Terminal className="h-4 w-4" />
                         </div>
                         <span className="font-bold tracking-tight text-lg">Climon</span>
@@ -66,7 +67,10 @@ export function Navbar() {
 
                 <div className="flex items-center gap-4">
                     <div className="relative hidden lg:block">
-                        <div className="flex items-center gap-2 h-8 w-64 rounded-md border border-border bg-transparent px-3 text-xs text-muted hover:border-foreground/20 transition-all cursor-pointer">
+                        <div
+                            onClick={() => window.dispatchEvent(new CustomEvent('open-climon-search'))}
+                            className="flex items-center gap-2 h-8 w-64 rounded-md border border-border bg-transparent px-3 text-xs text-muted hover:border-foreground/20 transition-all cursor-pointer"
+                        >
                             <Search className="h-3.5 w-3.5" />
                             <span>Search...</span>
                             <div className="ml-auto flex items-center gap-1 rounded border border-border bg-card px-1.5 py-0.5 text-[9px] font-mono">
@@ -145,6 +149,7 @@ export function Navbar() {
                     </motion.div>
                 )}
             </AnimatePresence>
+            <CommandPalette />
         </nav>
     )
 }

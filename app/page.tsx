@@ -49,10 +49,10 @@ export default function Home() {
           {/* 3. Ecosystem Grid (The Bento Box) */}
           <ToolGrid />
 
-          {/* 5. "Why Climon?" (The Philosophy) */}
+          {/* 4. "Why Climon?" (The Philosophy) */}
           <Philosophy />
 
-          {/* 4. Technical Specs (The Data Sheet) */}
+          {/* 5. Technical Specs (The Data Sheet) */}
           <TechSpecs />
 
           {/* 6. Universal Installation (The Closer) */}

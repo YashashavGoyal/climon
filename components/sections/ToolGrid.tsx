@@ -41,44 +41,44 @@ export function ToolGrid() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="group relative bg-card border border-border rounded-3xl p-8 flex flex-col justify-between hover:border-foreground/20 transition-all hover:shadow-2xl hover:-translate-y-1"
+                        className="group relative bg-card border border-border rounded-lg p-8 flex flex-col justify-between hover:border-foreground/20 transition-all hover:bg-card-hover hover:-translate-y-1"
                     >
                         <div>
                             <div className="flex items-start justify-between mb-8">
-                                <div className="size-12 bg-foreground text-background rounded-2xl flex items-center justify-center">
+                                <div className="size-12 bg-foreground text-background rounded flex items-center justify-center">
                                     {(() => {
                                         const Icon = iconMap[tool.icon] || Terminal
                                         return <Icon className="h-6 w-6" />
                                     })()}
                                 </div>
-                                <div className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border ${tool.status === 'Stable' ? 'border-green-500/20 text-green-500 bg-green-500/5' :
-                                        tool.status === 'Beta' ? 'border-orange-500/20 text-orange-500 bg-orange-500/5' :
-                                            'border-border text-muted bg-muted/5'
+                                <div className={`px-2.5 py-1 rounded border text-[10px] font-bold uppercase tracking-widest ${tool.status === 'Stable' ? 'border-green-500/20 text-green-500 bg-green-500/10' :
+                                        tool.status === 'Beta' ? 'border-amber-500/20 text-amber-500 bg-amber-500/10' :
+                                            'border-border text-muted bg-muted/10'
                                     }`}>
                                     {tool.status}
                                 </div>
                             </div>
-                            <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                            <h3 className="text-2xl font-bold mb-4 flex items-center gap-2 tracking-tight">
                                 {tool.title}
                                 <ArrowUpRight className="h-4 w-4 opacity-0 group-hover:opacity-40 transition-opacity" />
                             </h3>
-                            <p className="text-muted leading-relaxed mb-8">
+                            <p className="text-muted text-sm leading-relaxed mb-8 font-medium">
                                 {tool.description}
                             </p>
                         </div>
 
-                        <div className="bg-code-bg rounded-xl p-4 font-mono text-xs border border-border group-hover:bg-background transition-colors">
-                            <span className="text-muted/50 mr-2">$</span>
-                            <span className="text-foreground">{tool.command}</span>
+                        <div className="bg-black/40 rounded-md p-4 font-mono text-xs border border-border group-hover:border-foreground/20 transition-all">
+                            <span className="text-muted/50 mr-2 select-none font-bold">$</span>
+                            <span className="text-foreground font-bold">{tool.command}</span>
                         </div>
                     </motion.div>
                 ))}
             </div>
 
-            <div className="mt-16 flex justify-center">
+            <div className="mt-20 flex justify-center">
                 <Link
                     href="/tools"
-                    className="group flex items-center gap-2 px-8 py-4 rounded-2xl border border-border bg-card hover:bg-muted/10 transition-all font-bold text-sm tracking-tight"
+                    className="group flex items-center gap-2 px-10 py-5 rounded border border-border bg-card hover:bg-foreground hover:text-background transition-all font-bold text-[10px] uppercase tracking-[0.2em]"
                 >
                     View more tools
                     <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
